@@ -53,6 +53,8 @@
 #include "vcml/debugging/gdbarch.h"
 #include "vcml/debugging/gdbserver.h"
 #include "vcml/debugging/vspserver.h"
+#include "vcml/debugging/snapshotable.h"
+#include "vcml/debugging/snapshotter.h"
 
 #include "vcml/ui/keymap.h"
 #include "vcml/ui/video.h"
