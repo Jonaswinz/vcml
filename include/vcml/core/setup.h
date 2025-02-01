@@ -35,6 +35,7 @@ class setup
 {
 private:
     mwr::option<bool> m_log_debug;
+    mwr::option<bool> m_log_errors_only;
     mwr::option<bool> m_log_stdout;
     mwr::option<bool> m_log_inscight;
     mwr::option<string> m_log_files;
@@ -63,6 +64,7 @@ public:
     virtual ~setup();
 
     bool is_logging_debug() const { return m_log_debug; }
+    bool is_logging_errors_only() const { return m_log_errors_only; }
     bool is_logging_stdout() const { return m_log_stdout; }
     bool is_tracing_stdout() const { return m_trace_stdout; }
 

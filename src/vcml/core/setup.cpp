@@ -47,6 +47,7 @@ setup* setup::s_instance = nullptr;
 
 setup::setup(int argc, char** argv):
     m_log_debug("--log-debug", "Activate verbose debug logging"),
+    m_log_errors_only("--log-errors-only", "Only log errors"),
     m_log_stdout("--log-stdout", "Send log output to stdout"),
     m_log_inscight("--log-inscight", "Send log output to InSCight database"),
     m_log_files("--log-file", "-l", "Send log output to file"),
@@ -74,6 +75,9 @@ setup::setup(int argc, char** argv):
     log_level min = LOG_ERROR;
     log_level max = LOG_INFO;
 #endif
+
+    if (m_log_errors_only.has_value())
+        max = m_log_errors_only ? LOG_ERROR : LOG_INFO;
 
     if (m_log_debug.has_value())
         max = m_log_debug ? LOG_DEBUG : LOG_INFO;
